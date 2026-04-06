@@ -8,19 +8,16 @@ import {
 
 import authMiddleware from "../../middleware/auth.middleware.js";
 import authorizeRoles from "../../middleware/role.middleware.js";
+import { apiLimiter } from "../../middleware/rateLimit.middleware.js";
 
 const router = express.Router();
 
-// CREATE -> Admin
-router.post("/create", authMiddleware, authorizeRoles("admin"), create);
+router.post("/create",apiLimiter, authMiddleware, authorizeRoles("admin"), create);
 
-// GET -> Analyst + Admin
-router.get("/", authMiddleware, authorizeRoles("analyst", "admin"), getAll);
+router.get("/", apiLimiter, authMiddleware, authorizeRoles("analyst", "admin"), getAll);
 
-// UPDATE -> Admin
-router.patch("/:id", authMiddleware, authorizeRoles("admin"), update);
+router.patch("/:id", apiLimiter, authMiddleware, authorizeRoles("admin"), update);
 
-// DELETE -> Admin
-router.delete("/:id", authMiddleware, authorizeRoles("admin"), remove);
+router.delete("/:id", apiLimiter, authMiddleware, authorizeRoles("admin"), remove);
 
 export default router;
