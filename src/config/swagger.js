@@ -10,7 +10,7 @@ const options = {
     },
     servers: [
       {
-        url: "http://localhost:5000",
+        url: "https://finance-data-processing-pt0x.onrender.com",
       },
     ],
     components: {
