@@ -136,13 +136,13 @@ All calculations are done at the database level for efficiency.
 
 ---
 ---
-7. Rate Limiting
+### 7. Rate Limiting
 
 To improve security and prevent abuse, rate limiting is implemented on the API.
 
-General rate limiting is applied to all APIs to control excessive requests
-Stricter limits are applied on authentication endpoints (login/register) to prevent brute-force attacks
-Helps protect the server from spam and unnecessary load
+* General rate limiting is applied to all APIs to control excessive requests
+* Stricter limits are applied on authentication endpoints (login/register) to prevent brute-force attacks
+* Helps protect the server from spam and unnecessary load
 ---
 
 ## API Endpoints (Main)
